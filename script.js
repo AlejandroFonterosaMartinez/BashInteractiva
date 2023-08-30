@@ -125,11 +125,11 @@ inputElement.addEventListener("keyup", function (event) {
 
 function typeWriterEffectWithHTML(htmlContent, author) {
     const responseLine = document.createElement("p");
-    responseLine.innerHTML = `${author}: ${htmlContent}`; // Usamos innerHTML para agregar elementos HTML
+    responseLine.innerHTML = `${author}: ${htmlContent}`;
     consolaBody.appendChild(responseLine);
     const responseParagraph = document.createElement("p");
     responseParagraph.innerHTML = "&nbsp;";
-    consolaBody.appendChild(responseParagraph); // Agrega un párrafo vacío para el espacio entre respuestas
+    consolaBody.appendChild(responseParagraph); 
     setTimeout(function () {
         displayUserOptions();
     }, 1500);
