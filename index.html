@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/assets/robot.svg" sizes="32x32" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="login-form">
+        <div class="login-form-header">
+            <span>🤖</span> Login
+        </div>
+        <form>
+            <input type="text" id="usuario" placeholder="Usuario"> <!-- Corregido: agregado id="usuario" -->
+            <input type="password" id="password" placeholder="Contraseña"> <!-- Corregido: agregado id="password" -->
+            <button id="loginbutton" type="button">Login</button> <!-- Corregido: cambiado type a "button" -->
+        </form>
+    </div>
+    <script>
+        function login() {
+            var usuario = document.getElementById("usuario").value;
+            var password = document.getElementById("password").value;
+            if (usuario !== "" && password !== "") {
+                localStorage.setItem("usuario", usuario);
+                window.location.href = "bash.html";
+            } else {
+                alert("No introduzca campos vacíos.");
+            }
+        }
+        document.getElementById("loginbutton").addEventListener("click", login);
+
+        // pulsar enter:
+        document.addEventListener("DOMContentLoaded", function () {
+            const passwordElement = document.getElementById("password");
+
+            passwordElement.addEventListener("keyup", function (event) {
+                if (event.key === "Enter") {
+                    login();
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
